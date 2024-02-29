@@ -1,2 +1,2 @@
 # Bioinformatics
-This is a back-up of the code for the course *Bioinformatics*.
+This is a back-up for the code in the course *Bioinformatics*.
