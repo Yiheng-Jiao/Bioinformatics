@@ -23,7 +23,7 @@ sed -e '/s/chr_/chromosome_/g' test_command.gtf | cut -f 1,3,4,5
 
 4. 通过`man`命令以及更多的资料学习简单的`awk`命令，尝试互换示例文件的第2列和第3列，并且对输出结果利用`sort`命令依照第4和第5列数字大小排序，将最终结果输出到result.gtf文件中。
 ```
-awk '{print $1,$3,$2,$4,$5,$6,$7,$8,$9,$10,$11,$12}' test_command.gtf | sort -k 4 -k 5 -n
+awk '{print $1,$3,$2,$4,$5,$6,$7,$8,$9,$10,$11,$12}' test_command.gtf | sort -k 4 -k 5 -n >> result.gtf
 ```
 
 5. 更改示例文件的权限，使得文件所有者及所在用户组用户可读、写、执行而其他用户只可读，展示权限修改前后的权限变化。
