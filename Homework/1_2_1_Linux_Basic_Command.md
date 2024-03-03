@@ -2,7 +2,9 @@
 
 统计文件的行数:
 
-`wc -l test_command.gtf`
+```
+wc -l test_command.gtf
+```
 
 统计文件的字符数:
 
@@ -22,5 +24,6 @@
 
 5. 更改示例文件的权限，使得文件所有者及所在用户组用户可读、写、执行而其他用户只可读，展示权限修改前后的权限变化。
 
-`ls -hl /n chmod ug=rwx,o=r test_command.gtf`
+`ls -hl`
+`chmod ug=rwx,o=r test_command.gtf`
 `ls -hl`
