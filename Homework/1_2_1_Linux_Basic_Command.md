@@ -1,5 +1,5 @@
 1. 对于示例文件(test_command.gtf)，尝试使用相关命令或命令组合分别统计文件的行数以及字符数。
-
+    
 统计文件的行数:
 ```
 wc -l test_command.gtf
