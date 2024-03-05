@@ -30,5 +30,8 @@ awk '{print $1,$3,$2,$4,$5,$6,$7,$8,$9,$10,$11,$12}' test_command.gtf | sort -k 
 ```
 ls -hl
 chmod ug=rwx,o=r test_command.gtf
+#如果当前用户不是文件所有者，需要在PowerShell中更改所有者
+#通常来说，直接通过Windows文件管理器复制到share文件夹中的文件所有者默认为root
+#docker exec -u root jiaoyiheng_bioinfo_tsinghua chown -R test:test /home/test/share
 ls -hl
 ```
