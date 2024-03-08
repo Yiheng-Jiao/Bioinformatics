@@ -23,6 +23,19 @@
 
 ## Example
 
-***To be continued in next class.***
+- 1D Study: Gene Prediction
+- 2/3D Study: Drug Design (siRNA)
+- HD Study: Prediction Medicine
 
+# Week 2
+2024-03-08
+## 3 Steps of Informatics
+1. **Information**
+
+2. **Model**
+    - Regression Model
+    - Tree Model: Dicision Tree -> Random Forest
+    - Neural Network Model -> Deep Learning
+
+3. **Algorithm** 
 

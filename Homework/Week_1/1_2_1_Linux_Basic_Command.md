@@ -12,7 +12,9 @@ wc -c test_command.gtf
 
 2. 利用`grep`等命令尝试筛选并输出示例文件中以chr_起始，并且基因id为YDL248W的行。
 ```
-grep 'chr_' test_command.gtf | grep 'YDL248W'
+# 注意^和-w 'gene_id'
+grep '^chr_' test_command.gtf | grep -w 'gene_id "YDL248W"'
+
 ```
 
 
