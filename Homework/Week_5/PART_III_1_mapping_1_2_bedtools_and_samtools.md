@@ -58,27 +58,35 @@ bedtools subtract -a hg38.ACTB.gene.bed -b hg38.ACTB.CDS.bed >> hg38.ACTB.intron
 
 提取`COAD.ACTB.bam`中比对到ACTB基因intron区域的bam信息，后将bam转换为fastq文件：
 ```
+# 暂存比对到ACTB基因intron区域的bam信息的seqname作为key
 bedtools intersect -a hg38.ACTB.intron.bed -b COAD.ACTB.bam -wb | cut -f 10 > COAD.ACTB.intron.seqname
+# 将bam格式转换为sam格式方便后续操作
 samtools view -h COAD.ACTB.bam > COAD.ACTB.sam
+# 将head复制到ACTB基因intron区域的bam文件中
 grep '^@' COAD.ACTB.sam >> COAD.ACTB.intron.sam
+# 用seqname作为key找到对应各行bam信息
 for line in `cat COAD.ACTB.intron.seqname`
 do
         grep $line COAD.ACTB.sam >> COAD.ACTB.intron.sam
 done
-
+# 将sam格式转换为bam格式方便后续操作
 samtools view -b -S COAD.ACTB.intron.sam > COAD.ACTB.intron.bam
+# 对bam文件排序，防止后续转换为fastq格式时出错
 samtools collate COAD.ACTB.intron.bam COAD.ACTB.intron.collated
+# 将比对到ACTB基因intron区域的bam文件转换为fastq文件
 samtools fastq COAD.ACTB.intron.collated.bam > COAD.ACTB.intron.fq
 ```
-得到的
+得到结果文件`COAD.ACTB.intron.fq`。
 
 
+(4) 利用`COAD.ACTB.bam`计算出reads在ACTB基因对应的genomic interval上的coverage，以bedgraph格式输出。（提示：对于真核生物转录组测序向基因组mapping得到的bam文件，bedtools genomecov有必要加-split参数。）
 
-
-
-
+使用的命令如下：
 ```
 samtools sort COAD.ACTB.bam > COAD.ACTB.sorted.bam
 samtools index COAD.ACTB.sorted.bam
 bedtools genomecov -split -ibam COAD.ACTB.sorted.bam -bg > COAD.ACTB.coverage.bedgraph
 ```
+得到的结果在`COAD.ACTB.coverage.bedgraph`文件中，用IGV打开效果如下图。
+
+![alt text](COAD_ACTB_coverage.png "COAD_ACTB_coverage.png")
