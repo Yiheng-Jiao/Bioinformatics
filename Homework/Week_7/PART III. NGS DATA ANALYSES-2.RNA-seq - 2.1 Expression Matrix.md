@@ -2,11 +2,13 @@
 
 对small RNA-seq，由于其长度在18-30 nt，各small RNA之间长度较为接近，且单条read可以完全覆盖整个small RNA，因此无需除以基因长度，通常用CPM/RPM (**C**ounts/**R**eads **P**er **M**illion mapped reads)计算归一化基因表达值；
 
-对poly-A/total RNA-seq，由于各基因间长度差异较大，需要除以基因长度，通常用RPKM (**R**eads **P**er **K**ilobase per **M**illion mapped reads)计算归一化基因表达值；
+对poly-A/total RNA-seq，由于各基因间长度差异较大，而一条transcript产生的reads通常与其长度成正比，因此需要除以基因长度，通常用RPKM (**R**eads **P**er **K**ilobase per **M**illion mapped reads)计算归一化基因表达值；
 
 对paired-end RNA-seq，由于对应的两个reads可以组成一个fragment，因此常用FPKM (**F**ragments **P**er **K**ilobase per **M**illion mapped reads)计算归一化基因表达值；
 
+更直观地，还可以用TPM (**T**ranscipt **P**er **M**illion mapped reads)计算归一化基因表达值，直接反映转录本的相对数量，而非测序得到的reads密度；
 
+对于差异表达的分析(Differential Expression Analysis)，  edgeR使用TMM (Trimmed Mean of M-values)，即选取一个representative gene set (G)（通常选取一些表达水平变化很小的housekeeping gene），并给其中的每个gene一个权重(a weighted M)，对于任意一个样本(sample *j*)，根据其中属于gene set G的基因表达水平计算出TMM，从而实现归一化（**实际上是将representative gene set G作为“一”，这种做法有利于找到每一处变化，即使变化很小，但相对依赖于预设的gene set**）；DEseq2使用RLE (Relative Log Expression)，以各基因的raw counts/reads这一比值除以样本中所有基因raw counts/reads的几何平均值后的中位数作为归一化的系数(**可以认为是将样本基因表达值的对数的中位数作为了“一”，这种做法能凸显处基因表达变化的倍数大的基因，有利于找到最大的差异**)
 
 2) 根据下述图片描述，填出对应选项:
 ![alt text](Q_2-1.png)
