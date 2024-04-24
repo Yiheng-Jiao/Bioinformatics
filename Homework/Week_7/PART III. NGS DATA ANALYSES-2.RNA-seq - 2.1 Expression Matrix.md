@@ -1,5 +1,11 @@
 1) 请阐述 RNA-seq 中归一化基因表达值的几种基本计算方法。
 
+对small RNA-seq，由于其长度在18-30 nt，各small RNA之间长度较为接近，且单条read可以完全覆盖整个small RNA，因此无需除以基因长度，通常用CPM/RPM (**C**ounts/**R**eads **P**er **M**illion mapped reads)计算归一化基因表达值；
+
+对poly-A/total RNA-seq，由于各基因间长度差异较大，需要除以基因长度，通常用RPKM (**R**eads **P**er **K**ilobase per **M**illion mapped reads)计算归一化基因表达值；
+
+对paired-end RNA-seq，由于对应的两个reads可以组成一个fragment，因此常用FPKM (**F**ragments **P**er **K**ilobase per **M**illion mapped reads)计算归一化基因表达值；
+
 
 
 2) 根据下述图片描述，填出对应选项:
