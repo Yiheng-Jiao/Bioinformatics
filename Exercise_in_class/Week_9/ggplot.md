@@ -10,7 +10,7 @@
 
 3.三个Species的对应的填充颜色分别设为#C44E52, #55A868和#4C72B0(可使用scale_fill_manual函数)
 
-使用的代码如下：
+使用的代码`ggplot_violin_plot.R`如下：
 
 ```
 ggplot(iris, aes(x = Species, y = Sepal.Length)) +
