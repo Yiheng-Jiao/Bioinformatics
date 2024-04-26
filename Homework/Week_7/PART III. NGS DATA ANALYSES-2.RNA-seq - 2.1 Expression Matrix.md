@@ -88,90 +88,75 @@ file_list_READ <- list.files(path = "~/tumor-transcriptome-demo/READ/")
 
 # 获取样本名称，便于确定heatmap各列对应的样本
 sample_list_COAD <- substr(file_list_COAD, 1, 28)
-sample_list_COAD <- substr(file_list_COAD, 1, 28)
-sample_list_COAD <- substr(file_list_COAD, 1, 28)
+sample_list_ESCA <- substr(file_list_ESCA, 1, 28)
+sample_list_READ <- substr(file_list_READ, 1, 28)
 
-# 通过每组第一个样本文件获取Gene id，便于确定heatmap各行对应的基因
+# 通过第一个样本文件获取Gene id，便于确定heatmap各行对应的基因
 file_1_COAD <- read.delim(paste("~/tumor-transcriptome-demo/COAD/", file_list_COAD[1], sep = ""), comment.char = "#")
-file_1_ESCA <- read.delim(paste("~/tumor-transcriptome-demo/ESCA/", file_list_ESCA[1], sep = ""), comment.char = "#")
-file_1_READ <- read.delim(paste("~/tumor-transcriptome-demo/READ/", file_list_READ[1], sep = ""), comment.char = "#")
 
-Geneid_COAD=file_1_COAD[1]
-Geneid_ESCA=file_1_ESCA[1]
-Geneid_READ=file_1_READ[1]
+Geneid=file_1_COAD[[1]]
 
 # 初始化matrix
-counts.matrix.COAD=matrix(nrow = 2000, ncol = 50)
-counts.matrix.ESCA=matrix(nrow = 2000, ncol = 50)
-counts.matrix.READ=matrix(nrow = 2000, ncol = 50)
+counts.matrix=matrix(nrow = 2000, ncol = 150)
 
 # 合并各个样本的featureCount
 for (i in seq_along(file_list_COAD)){
   current_file <- read.delim(paste("~/tumor-transcriptome-demo/COAD/", file_list_COAD[i], sep = ""), comment.char = "#")
   current_matrix=as.matrix(current_file[7])
-  counts.matrix.COAD[(2000 * i - 1999):(2000 * i)]=as.matrix(current_file[7])
+  counts.matrix[(2000 * i - 1999):(2000 * i)]=as.matrix(current_file[7])
 }
 for (i in seq_along(file_list_ESCA)){
   current_file <- read.delim(paste("~/tumor-transcriptome-demo/ESCA/", file_list_ESCA[i], sep = ""), comment.char = "#")
   current_matrix=as.matrix(current_file[7])
-  counts.matrix.ESCA[(2000 * i - 1999):(2000 * i)]=as.matrix(current_file[7])
+  counts.matrix[(2000 * 50 + 2000 * i - 1999):(2000 * 50 + 2000 * i)]=as.matrix(current_file[7])
 }
 for (i in seq_along(file_list_READ)){
   current_file <- read.delim(paste("~/tumor-transcriptome-demo/READ/", file_list_READ[i], sep = ""), comment.char = "#")
   current_matrix=as.matrix(current_file[7])
-  counts.matrix.READ[(2000 * i - 1999):(2000 * i)]=as.matrix(current_file[7])
+  counts.matrix[(2000 * 100 + 2000 * i - 1999):(2000 * 100 + 2000 * i)]=as.matrix(current_file[7])
 }
+
+# 设置matrix的colnames，便于在heatmap中确定各样本名称
+colnames(counts.matrix) = c(sample_list_COAD, sample_list_ESCA, sample_list_READ)
+rownames(counts.matrix) = Geneid
 
 # 计算CPM
-CPM.matrix.COAD <- t(1000000*t(counts.matrix.COAD)/colSums(counts.matrix.COAD))
-CPM.matrix.ESCA <- t(1000000*t(counts.matrix.ESCA)/colSums(counts.matrix.ESCA))
-CPM.matrix.READ <- t(1000000*t(counts.matrix.READ)/colSums(counts.matrix.READ))
-
-log10.CPM.matrix.COAD <- log10(CPM.matrix.COAD+1)
-log10.CPM.matrix.ESCA <- log10(CPM.matrix.ESCA+1)
-log10.CPM.matrix.READ <- log10(CPM.matrix.READ+1)
+CPM.matrix <- t(1000000*t(counts.matrix)/colSums(counts.matrix))
+log10.CPM.matrix <- log10(CPM.matrix+1)
 
 # 计算z-scores
-z.scores.COAD <- (log10.CPM.matrix.COAD - rowMeans(log10.CPM.matrix.COAD))/apply(log10.CPM.matrix.COAD,1,sd)
-z.scores.ESCA <- (log10.CPM.matrix.ESCA - rowMeans(log10.CPM.matrix.ESCA))/apply(log10.CPM.matrix.ESCA,1,sd)
-z.scores.READ <- (log10.CPM.matrix.READ - rowMeans(log10.CPM.matrix.READ))/apply(log10.CPM.matrix.READ,1,sd)
+z.scores <- (log10.CPM.matrix - rowMeans(log10.CPM.matrix))/apply(log10.CPM.matrix,1,sd)
 
 # 在可视化前，将>2的z-score clip到2，<-2的z-score类似的clip到-2，避免展示出个别outlier的数值，导致绝大部分样本看起来颜色差异不明显的情况
-for (i in seq_along(z.scores.COAD)){
-  if(z.scores.COAD[i]!="NaN"){
-    if(z.scores.COAD[i]>2){
-      z.scores.COAD[i]=2
+for (i in seq_along(z.scores)){
+  if(z.scores[i]!="NaN"){
+    if(z.scores[i]>2){
+      z.scores[i]=2
     }
-    if(z.scores.COAD[i]<(-2)){
-      z.scores.COAD[i]=(-2)
-    }
-  }
-}
-for (i in seq_along(z.scores.ESCA)){
-  if(z.scores.ESCA[i]!="NaN"){
-    if(z.scores.ESCA[i]>2){
-      z.scores.ESCA[i]=2
-    }
-    if(z.scores.ESCA[i]<(-2)){
-      z.scores.ESCA[i]=(-2)
+    if(z.scores[i]<(-2)){
+      z.scores[i]=(-2)
     }
   }
-}
-for (i in seq_along(z.scores.READ)){
-  if(z.scores.READ[i]!="NaN"){
-    if(z.scores.READ[i]>2){
-      z.scores.READ[i]=2
-    }
-    if(z.scores.READ[i]<(-2)){
-      z.scores.READ[i]=(-2)
-    }
+  else{
+    z.scores[i]=0
   }
 }
 
 # 加载pheatmap包
 library(pheatmap)
 
-# 
+
+annotation_col = data.frame(CellType = factor(rep(c("COAD", "ESCA", "READ"), c(50, 50, 50))))
+
+rownames(annotation_col) = colnames(z.scores)
+
+ann_colors = list(CellType = c(COAD = "#7FBC41", ESCA = "#DE77AE", READ = "#DE77EC"))
+
+pheatmap(z.scores, 
+         cutree_col = 3, cutree_row = 1,
+         cluster_rows=FALSE, show_rownames=FALSE, cluster_cols=TRUE, show_colnames = FALSE,
+         annotation_col = annotation_col, annotation_colors = ann_colors)
+
 
 
 ```
