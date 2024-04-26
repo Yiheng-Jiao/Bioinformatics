@@ -145,18 +145,20 @@ for (i in seq_along(z.scores)){
 # 加载pheatmap包
 library(pheatmap)
 
-
+# 列注释（共150列的matrix中，前、中、后50列分别对应COAD、ESCA、READ）
 annotation_col = data.frame(CellType = factor(rep(c("COAD", "ESCA", "READ"), c(50, 50, 50))))
 
+# 列注释与matrix列的对应关系
 rownames(annotation_col) = colnames(z.scores)
 
+# heatmap中注释的颜色
 ann_colors = list(CellType = c(COAD = "#7FBC41", ESCA = "#DE77AE", READ = "#DE77EC"))
 
-pheatmap(z.scores, 
-         cutree_col = 3, cutree_row = 1,
-         cluster_rows=FALSE, show_rownames=FALSE, cluster_cols=TRUE, show_colnames = FALSE,
-         annotation_col = annotation_col, annotation_colors = ann_colors)
-
-
-
+# 绘制heatmap图
+pheatmap(z.scores, # 数据来源 
+         cluster_rows=FALSE,  cluster_cols=FALSE, # 是否按行/列聚类
+         show_rownames=FALSE,show_colnames = FALSE, # 是否展示各行/列名称，此处由于数据量过大，无法展示各样本名和各基因名
+         annotation_col = annotation_col, annotation_colors = ann_colors) # 注释样本所对应的癌症
 ```
+
+绘制得到的heatmap如下：
