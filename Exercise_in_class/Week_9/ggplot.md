@@ -13,6 +13,7 @@
 使用的代码`ggplot_violin_plot.R`如下：
 
 ```
+library(ggplot2) # import ggplot2 package
 ggplot(iris, aes(x = Species, y = Sepal.Length)) +
   geom_violin(aes(fill = Species), trim = FALSE) + # 绘制violin图并按Species填充不同颜色
   scale_fill_manual(values = c("#C44E52", "#55A868", "#4C72B0")) + # 设置填充颜色
@@ -24,3 +25,11 @@ ggplot(iris, aes(x = Species, y = Sepal.Length)) +
 得到的小提琴图如下：
 
 ![alt text](ggplot_violin.png)
+
+由于部分数据点的Sepal.Length（y值）超出了0.5到7的范围，因此还出现了如下报错：
+
+```
+Warning messages:
+1: Removed 12 rows containing non-finite outside the scale range (`stat_ydensity()`). 
+2: Removed 170 rows containing missing values or values outside the scale range (`geom_violin()`). 
+```
