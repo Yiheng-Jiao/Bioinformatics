@@ -102,17 +102,14 @@ counts.matrix=matrix(nrow = 2000, ncol = 150)
 # 合并各个样本的featureCount
 for (i in seq_along(file_list_COAD)){
   current_file <- read.delim(paste("~/tumor-transcriptome-demo/COAD/", file_list_COAD[i], sep = ""), comment.char = "#")
-  current_matrix=as.matrix(current_file[7])
   counts.matrix[(2000 * i - 1999):(2000 * i)]=as.matrix(current_file[7])
 }
 for (i in seq_along(file_list_ESCA)){
   current_file <- read.delim(paste("~/tumor-transcriptome-demo/ESCA/", file_list_ESCA[i], sep = ""), comment.char = "#")
-  current_matrix=as.matrix(current_file[7])
   counts.matrix[(2000 * 50 + 2000 * i - 1999):(2000 * 50 + 2000 * i)]=as.matrix(current_file[7])
 }
 for (i in seq_along(file_list_READ)){
   current_file <- read.delim(paste("~/tumor-transcriptome-demo/READ/", file_list_READ[i], sep = ""), comment.char = "#")
-  current_matrix=as.matrix(current_file[7])
   counts.matrix[(2000 * 100 + 2000 * i - 1999):(2000 * 100 + 2000 * i)]=as.matrix(current_file[7])
 }
 

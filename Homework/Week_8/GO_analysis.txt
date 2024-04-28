@@ -1,0 +1,109 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20240226)
+Annotation Version and Release Date:	GO Ontology database DOI:  10.5281/zenodo.10536401 Released 2024-01-17
+Analyzed List:	upload_1 (Arabidopsis thaliana)
+Reference List:	Arabidopsis thaliana (all genes in database)
+Test Type:	FISHER
+Correction:	FDR
+GO biological process complete	Arabidopsis thaliana - REFLIST (27436)	upload_1 (593)	upload_1 (expected)	upload_1 (over/under)	upload_1 (fold Enrichment)	upload_1 (raw P-value)	upload_1 (FDR)
+positive regulation of flavonol biosynthetic process (GO:1900386)	3	3	.06	+	46.27	1.00E-05	1.35E-03
+regulation of carbohydrate utilization (GO:0043610)	2	2	.04	+	46.27	4.66E-04	3.16E-02
+nitrotoluene catabolic process (GO:0046263)	2	2	.04	+	46.27	4.66E-04	3.12E-02
+trinitrotoluene catabolic process (GO:0046260)	2	2	.04	+	46.27	4.66E-04	3.09E-02
+2,4,6-trinitrotoluene catabolic process (GO:0046256)	2	2	.04	+	46.27	4.66E-04	3.05E-02
+toluene-containing compound catabolic process (GO:0072491)	2	2	.04	+	46.27	4.66E-04	3.02E-02
+toluene-containing compound metabolic process (GO:0072490)	2	2	.04	+	46.27	4.66E-04	2.98E-02
+plastid inner membrane organization (GO:0009667)	2	2	.04	+	46.27	4.66E-04	2.95E-02
+2,4,6-trinitrotoluene metabolic process (GO:0018974)	2	2	.04	+	46.27	4.66E-04	2.91E-02
+trinitrotoluene metabolic process (GO:0018973)	2	2	.04	+	46.27	4.66E-04	2.88E-02
+chloroplast elongation (GO:0010151)	2	2	.04	+	46.27	4.66E-04	2.85E-02
+nitrotoluene metabolic process (GO:0019326)	2	2	.04	+	46.27	4.66E-04	2.82E-02
+regulation of flavonol biosynthetic process (GO:1900384)	5	4	.11	+	37.01	1.06E-06	1.87E-04
+cellular response to UV-A (GO:0071492)	4	3	.09	+	34.70	3.95E-05	4.04E-03
+response to UV-A (GO:0070141)	4	3	.09	+	34.70	3.95E-05	3.97E-03
+cellular response to high light intensity (GO:0071486)	6	3	.13	+	23.13	1.91E-04	1.56E-02
+positive regulation of flavonoid biosynthetic process (GO:0009963)	12	6	.26	+	23.13	8.22E-08	2.20E-05
+positive regulation of anthocyanin metabolic process (GO:0031539)	6	3	.13	+	23.13	1.91E-04	1.54E-02
+PSII associated light-harvesting complex II catabolic process (GO:0010304)	8	3	.17	+	17.35	5.19E-04	3.10E-02
+anthocyanin-containing compound biosynthetic process (GO:0009718)	19	7	.41	+	17.05	8.55E-08	2.19E-05
+cellular response to blue light (GO:0071483)	28	10	.61	+	16.52	1.91E-10	7.67E-08
+regulation of flavonoid biosynthetic process (GO:0009962)	28	10	.61	+	16.52	1.91E-10	7.16E-08
+regulation of anthocyanin biosynthetic process (GO:0031540)	15	5	.32	+	15.42	1.16E-05	1.49E-03
+anthocyanin-containing compound metabolic process (GO:0046283)	27	9	.58	+	15.42	3.21E-09	1.00E-06
+flavonoid biosynthetic process (GO:0009813)	62	20	1.34	+	14.92	1.43E-18	2.01E-15
+flavonol biosynthetic process (GO:0051555)	23	7	.50	+	14.08	3.86E-07	7.76E-05
+flavone biosynthetic process (GO:0051553)	23	7	.50	+	14.08	3.86E-07	7.49E-05
+flavonoid metabolic process (GO:0009812)	73	22	1.58	+	13.94	1.44E-19	2.71E-16
+flavonol metabolic process (GO:0051554)	24	7	.52	+	13.49	5.35E-07	1.00E-04
+flavone metabolic process (GO:0051552)	24	7	.52	+	13.49	5.35E-07	9.70E-05
+intracellular receptor signaling pathway (GO:0030522)	22	6	.48	+	12.62	5.52E-06	8.17E-04
+blue light signaling pathway (GO:0009785)	22	6	.48	+	12.62	5.52E-06	7.97E-04
+response to UV-B (GO:0010224)	73	16	1.58	+	10.14	3.14E-12	1.96E-09
+regulation of anthocyanin metabolic process (GO:0031537)	28	6	.61	+	9.91	2.50E-05	2.75E-03
+establishment of plastid localization (GO:0051667)	31	6	.67	+	8.95	4.62E-05	4.56E-03
+chloroplast relocation (GO:0009902)	31	6	.67	+	8.95	4.62E-05	4.48E-03
+response to blue light (GO:0009637)	93	18	2.01	+	8.95	1.33E-12	9.35E-10
+response to far red light (GO:0010218)	52	10	1.12	+	8.90	1.44E-07	3.53E-05
+cellular response to red or far red light (GO:0071489)	55	10	1.19	+	8.41	2.52E-07	5.66E-05
+chloroplast localization (GO:0019750)	36	6	.78	+	7.71	1.11E-04	9.65E-03
+pigment biosynthetic process (GO:0046148)	108	18	2.33	+	7.71	1.88E-11	9.63E-09
+plastid localization (GO:0051644)	37	6	.80	+	7.50	1.31E-04	1.10E-02
+pigment metabolic process (GO:0042440)	137	22	2.96	+	7.43	2.37E-13	2.67E-10
+cellular response to light stimulus (GO:0071482)	106	17	2.29	+	7.42	1.29E-10	5.56E-08
+response to red light (GO:0010114)	75	12	1.62	+	7.40	7.04E-08	1.98E-05
+cellular response to radiation (GO:0071478)	110	17	2.38	+	7.15	2.35E-10	8.25E-08
+response to UV (GO:0009411)	132	20	2.85	+	7.01	8.85E-12	4.98E-09
+red or far-red light signaling pathway (GO:0010017)	53	8	1.15	+	6.98	1.71E-05	2.05E-03
+regulation of photomorphogenesis (GO:0010099)	41	6	.89	+	6.77	2.35E-04	1.81E-02
+photomorphogenesis (GO:0009640)	83	12	1.79	+	6.69	2.23E-07	5.23E-05
+regulation of response to red or far red light (GO:2000030)	52	7	1.12	+	6.23	1.22E-04	1.04E-02
+toxin catabolic process (GO:0009407)	46	6	.99	+	6.03	4.47E-04	3.06E-02
+response to red or far red light (GO:0009639)	222	27	4.80	+	5.63	4.75E-13	3.82E-10
+glutathione metabolic process (GO:0006749)	59	7	1.28	+	5.49	2.74E-04	2.03E-02
+organic hydroxy compound biosynthetic process (GO:1901617)	179	21	3.87	+	5.43	3.71E-10	1.23E-07
+toxin metabolic process (GO:0009404)	60	7	1.30	+	5.40	3.05E-04	2.20E-02
+response to high light intensity (GO:0009644)	68	7	1.47	+	4.76	6.59E-04	3.86E-02
+cellular response to environmental stimulus (GO:0104004)	199	18	4.30	+	4.18	3.72E-07	8.04E-05
+cellular response to abiotic stimulus (GO:0071214)	199	18	4.30	+	4.18	3.72E-07	7.74E-05
+isoprenoid biosynthetic process (GO:0008299)	166	15	3.59	+	4.18	3.50E-06	5.46E-04
+terpenoid biosynthetic process (GO:0016114)	133	12	2.87	+	4.17	3.32E-05	3.53E-03
+response to toxic substance (GO:0009636)	184	16	3.98	+	4.02	2.75E-06	4.69E-04
+detoxification (GO:0098754)	162	14	3.50	+	4.00	1.23E-05	1.54E-03
+response to light stimulus (GO:0009416)	779	65	16.84	+	3.86	1.08E-20	6.10E-17
+organic hydroxy compound metabolic process (GO:1901615)	313	26	6.77	+	3.84	5.92E-09	1.75E-06
+response to radiation (GO:0009314)	800	65	17.29	+	3.76	4.36E-20	1.23E-16
+phenylpropanoid metabolic process (GO:0009698)	112	9	2.42	+	3.72	7.40E-04	4.29E-02
+response to light intensity (GO:0009642)	162	13	3.50	+	3.71	5.42E-05	5.17E-03
+terpenoid metabolic process (GO:0006721)	179	14	3.87	+	3.62	3.76E-05	3.92E-03
+isoprenoid metabolic process (GO:0006720)	221	17	4.78	+	3.56	7.13E-06	1.00E-03
+chloroplast organization (GO:0009658)	225	17	4.86	+	3.50	9.04E-06	1.24E-03
+cellular response to hypoxia (GO:0071456)	238	17	5.14	+	3.30	1.88E-05	2.20E-03
+cellular response to decreased oxygen levels (GO:0036294)	240	17	5.19	+	3.28	2.09E-05	2.40E-03
+cellular response to oxygen levels (GO:0071453)	241	17	5.21	+	3.26	2.21E-05	2.48E-03
+plastid organization (GO:0009657)	302	21	6.53	+	3.22	3.09E-06	5.11E-04
+response to jasmonic acid (GO:0009753)	191	13	4.13	+	3.15	2.83E-04	2.07E-02
+response to fatty acid (GO:0070542)	195	13	4.21	+	3.08	3.46E-04	2.46E-02
+response to hypoxia (GO:0001666)	265	17	5.73	+	2.97	7.26E-05	6.81E-03
+response to decreased oxygen levels (GO:0036293)	269	17	5.81	+	2.92	8.73E-05	7.92E-03
+response to oxygen levels (GO:0070482)	271	17	5.86	+	2.90	9.55E-05	8.53E-03
+secondary metabolic process (GO:0019748)	308	18	6.66	+	2.70	1.47E-04	1.22E-02
+lipid biosynthetic process (GO:0008610)	577	27	12.47	+	2.16	2.09E-04	1.65E-02
+response to abiotic stimulus (GO:0009628)	2255	103	48.74	+	2.11	3.66E-13	3.44E-10
+small molecule biosynthetic process (GO:0044283)	621	27	13.42	+	2.01	6.52E-04	3.86E-02
+cellular response to chemical stimulus (GO:0070887)	1152	50	24.90	+	2.01	3.56E-06	5.42E-04
+response to oxygen-containing compound (GO:1901700)	1598	57	34.54	+	1.65	2.47E-04	1.88E-02
+response to chemical (GO:0042221)	2763	96	59.72	+	1.61	3.21E-06	5.16E-04
+response to stimulus (GO:0050896)	5875	195	126.98	+	1.54	6.61E-11	3.10E-08
+cellular response to stimulus (GO:0051716)	2698	86	58.31	+	1.47	2.70E-04	2.02E-02
+nitrogen compound metabolic process (GO:0006807)	6005	95	129.79	-	.73	3.55E-04	2.50E-02
+macromolecule metabolic process (GO:0043170)	5288	74	114.29	-	.65	1.16E-05	1.52E-03
+cellular nitrogen compound metabolic process (GO:0034641)	3039	36	65.68	-	.55	2.89E-05	3.13E-03
+macromolecule modification (GO:0043412)	2285	26	49.39	-	.53	2.13E-04	1.67E-02
+nucleic acid metabolic process (GO:0090304)	1907	21	41.22	-	.51	4.27E-04	2.97E-02
+nucleobase-containing compound metabolic process (GO:0006139)	2323	23	50.21	-	.46	1.31E-05	1.60E-03
+embryo development ending in seed dormancy (GO:0009793)	565	1	12.21	-	.08	1.01E-04	8.85E-03
+embryo development (GO:0009790)	592	1	12.80	-	.08	7.36E-05	6.79E-03
