@@ -2,7 +2,7 @@
 
 随着检验次数的增加，发生Type I Error (即出现假阳性错误)的概率逐渐增大，p-value不再那么准确。因此，采用Benjamini and Hochberg FDR (BH)方法进行计算得到FDR，或者采用Storey和Tibshirani的方法计算得到q value，两者均表示假阳性率，通过筛选控制假阳性率可以使GO分析更加准确。
 
-2. 请结合上课时所讲的知识阐述DESeq2和edgeR中如何对数据进行 normalization，列出并解释具体的公式 。
+2. 请结合上课时所讲的知识阐述DESeq2和edgeR中如何对数据进行 normalization 。
 
 对于差异表达的分析(Differential Expression Analysis)，edgeR使用TMM (Trimmed Mean of M-values)，即选取一个representative gene set (G)（通常选取一些表达水平变化很小的housekeeping gene），并给其中的每个gene一个权重(a weighted M)，对于任意一个样本(sample *j*)，根据其中属于gene set G的基因表达水平计算出TMM，从而实现归一化（**实际上是将representative gene set G作为“一”，这种做法有利于找到每一处变化，即使变化很小，但相对依赖于预设的gene set**）；DEseq2使用RLE (Relative Log Expression)，以各基因的raw counts/reads这一比值除以样本中所有基因raw counts/reads的几何平均值后的中位数作为归一化的系数(**可以认为是将样本基因表达值的对数的中位数作为了“一”，这种做法能凸显处基因表达变化的倍数大的基因，有利于找到最大的差异**)
 
