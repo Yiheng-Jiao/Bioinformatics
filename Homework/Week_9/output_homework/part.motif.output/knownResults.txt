@@ -1,0 +1,12 @@
+Motif Name	Consensus	P-value	Log P-value	q-value (Benjamini)	# of Target Sequences with Motif(of 69)	% of Target Sequences with Motif	# of Background Sequences with Motif(of 34746)	% of Background Sequences with Motif
+ABF1/SacCer-Promoters/Homer	CGTRNAAARTGA	1e-2	-5.089e+00	0.0678	11.0	15.94%	2338.4	6.73%
+Cbf1(bHLH)/Yeast-Cbf1-ChIP-Seq(GSE29506)/Homer	TCACGTGAYH	1e-1	-4.080e+00	0.0930	5.0	7.25%	751.3	2.16%
+RLR1?/SacCer-Promoters/Homer	WTTTTCYYTTTT	1e-1	-3.893e+00	0.0930	14.0	20.29%	3913.5	11.26%
+Pho2(bHLH)/Yeast-Pho2-ChIP-Seq(GSE29506)/Homer	CCCACGTGCT	1e-1	-2.387e+00	0.2526	5.0	7.25%	1207.9	3.48%
+GAGA-repeat/SacCer-Promoters/Homer	CTYTCTYTCTCTCTC	1e0	-2.237e+00	0.2526	31.0	44.93%	12840.8	36.95%
+SUT1?/SacCer-Promoters/Homer	CCCCGCGC	1e0	-7.581e-01	0.8590	34.0	49.28%	16711.0	48.09%
+SFP1/SacCer-Promoters/Homer	DDAAAAATTTTY	1e0	-5.870e-01	0.8737	2.0	2.90%	933.2	2.69%
+Pho4(bHLH)/Yeast-Pho4-ChIP-Seq(GSE29506)/Homer	AAGCACGTGBGD	1e0	-5.034e-01	0.8737	1.0	1.45%	465.0	1.34%
+TOD6?/SacCer-Promoters/Homer	GCGATGAGMT	1e0	-4.105e-01	0.8737	1.0	1.45%	544.0	1.57%
+REB1/SacCer-Promoters/Homer	KCCGGGTAAYRR	1e0	-3.609e-01	0.8737	2.0	2.90%	1209.2	3.48%
+TATA-box/SacCer-Promoters/Homer	BBHWTATATA	1e0	-1.369e-01	0.8737	4.0	5.80%	3088.3	8.89%
